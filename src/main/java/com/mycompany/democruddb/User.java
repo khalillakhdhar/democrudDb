@@ -35,6 +35,10 @@ public class User {
         this.id = id;
         this.nom = nom;
     }
+
+    public User(String nom) {
+        this.nom = nom;
+    }
     
     
     
