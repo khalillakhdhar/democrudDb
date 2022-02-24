@@ -17,10 +17,11 @@ public Connect c=new Connect();
     public void createUser(User u) {
 
         try{
-        String sql = "INSERT INTO user(nom) VALUES (?)";
-        PreparedStatement statement=  Connect.conn.prepareStatement(sql);
+            //create statetment
+        String sql = "INSERT INTO user(nom) VALUES (?)"; // declaration de query
+        PreparedStatement statement=  Connect.conn.prepareStatement(sql); // preparation de query
         
-        statement.setString(1, u.getNom());
+        statement.setString(1, u.getNom()); // passage des paramétre au lieu de ?
         statement.executeUpdate(); // retourne un int 
 
             System.out.println("ajouté");
