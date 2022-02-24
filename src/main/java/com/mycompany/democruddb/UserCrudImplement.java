@@ -43,7 +43,7 @@ public Connect c=new Connect();
         String sql = "UPDATE `user` SET `nom`=? WHERE `id`=?"; // corp de requete
         PreparedStatement statement=  Connect.conn.prepareStatement(sql); // preparation
         
-        statement.setString(1, u.getNom());
+        statement.setString(1, u.getNom()); // 1 la valeur u.getNom() d'ordre 1 remplace le 1er ?
         statement.setInt(2, u.getId());
         statement.executeUpdate(); // retourne un int 
 
