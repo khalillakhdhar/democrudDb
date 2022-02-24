@@ -23,6 +23,7 @@ public Connect c=new Connect();
         statement.setString(1, u.getNom());
         statement.executeUpdate(); // retourne un int 
 
+            System.out.println("ajouté");
 
         }
         catch(Exception ex)
@@ -38,12 +39,14 @@ public Connect c=new Connect();
     @Override
     public void updateUser(User u) {
  try{
-        String sql = "IUPDATE `user` SET `nom`=? WHERE `id`=?";
-        PreparedStatement statement=  Connect.conn.prepareStatement(sql);
+        String sql = "UPDATE `user` SET `nom`=? WHERE `id`=?"; // corp de requete
+        PreparedStatement statement=  Connect.conn.prepareStatement(sql); // preparation
         
         statement.setString(1, u.getNom());
+        statement.setInt(2, u.getId());
         statement.executeUpdate(); // retourne un int 
 
+            System.out.println("modifié");
 
         }
         catch(Exception ex)
@@ -56,7 +59,22 @@ public Connect c=new Connect();
 
     @Override
     public void deleteUser(User u) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+try{
+        String sql = "Delete FROM user WHERE `id`=?"; // corp de requete
+        PreparedStatement statement=  Connect.conn.prepareStatement(sql); // preparation
+        
+       
+        statement.setInt(1, u.getId());
+        statement.executeUpdate(); // retourne un int 
+
+            System.out.println("supprimé");
+
+        }
+        catch(Exception ex)
+        {
+            System.out.println("suppression impossible");
+        
+        }
     }
     
     

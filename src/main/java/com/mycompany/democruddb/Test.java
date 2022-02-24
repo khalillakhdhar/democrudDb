@@ -15,9 +15,13 @@ public class Test {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        User us=  new User("khalil");
-        UserCrudImplement uci=new UserCrudImplement();
-        uci.createUser(us);
+//        User us=  new User("khalil");
+//        UserCrudImplement uci=new UserCrudImplement();
+//        uci.createUser(us);
+            User us=new User(1, "first test");
+            UserCrudImplement uci=new UserCrudImplement();
+            uci.updateUser(us);
+        
     }
     
 }
