@@ -18,9 +18,13 @@ public class Test {
 //        User us=  new User("khalil");
 //        UserCrudImplement uci=new UserCrudImplement();
 //        uci.createUser(us);
-            User us=new User(1, "first test");
-            UserCrudImplement uci=new UserCrudImplement();
-            uci.updateUser(us);
+//            User us=new User(1, "first test");
+//            UserCrudImplement uci=new UserCrudImplement();
+//            uci.updateUser(us);
+User us=new User();
+us.setId(2);
+UserCrudImplement uci=new UserCrudImplement();
+uci.deleteUser(us);
         
     }
     
